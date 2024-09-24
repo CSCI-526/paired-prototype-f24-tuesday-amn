@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
             growStep++; // Increment grow step count
 
             // Adjust jump height and fall speed based on size
-            jumpHeight += 2f; // Increase jump height
+            jumpHeight += 3f; // Increase jump height
             fallSpeedMultiplier -= 0.6f; // Slow down fall
         }
     }
@@ -138,7 +138,7 @@ public class Player : MonoBehaviour
             growStep--; // Decrement grow step count
             
             // Adjust jump height and fall speed based on size
-            jumpHeight -= 2f; // Decrease jump height
+            jumpHeight -= 3f; // Decrease jump height
             fallSpeedMultiplier += 0.6f; // Speed up fall
         }
     }
@@ -148,4 +148,6 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.white;
         Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
     }
+
+
 }
