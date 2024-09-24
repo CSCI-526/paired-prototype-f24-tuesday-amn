@@ -529,6 +529,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f812a6b4-9b9e-404f-af27-9e8f35bacb1a
     m_ActionName: Movement/Jump[/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1022319970}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnGrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ca57b05b-ef1d-48a2-9d53-7cc0b267d764
+    m_ActionName: Movement/Grow[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1022319970}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnShrink
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1a0bb9e3-f5aa-4dd1-bbba-88e12807417d
+    m_ActionName: Movement/shrink[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
@@ -560,6 +592,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 128
+  growScaleFactor: 1.25
 --- !u!1 &1442655358
 GameObject:
   m_ObjectHideFlags: 0
