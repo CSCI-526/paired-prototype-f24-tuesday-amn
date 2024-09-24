@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     // New variables for growing and shrinking
     public float growScaleFactor = 1.25f; // Each step grows the ball by 25%
     private int growStep = 0; // Track how many times the ball has grown (max 5)
-    private int maxGrowSteps = 5; // Maximum number of growth steps
+    private int maxGrowSteps = 3; // Maximum number of growth steps
     private Vector3 originalScale; // Store original size for shrinking back
 
     // Start is called before the first frame update
@@ -125,7 +125,7 @@ public class Player : MonoBehaviour
 
             // Adjust jump height and fall speed based on size
             jumpHeight += 2f; // Increase jump height
-            fallSpeedMultiplier -= 0.2f; // Slow down fall
+            fallSpeedMultiplier -= 0.6f; // Slow down fall
         }
     }
 
@@ -139,7 +139,7 @@ public class Player : MonoBehaviour
             
             // Adjust jump height and fall speed based on size
             jumpHeight -= 2f; // Decrease jump height
-            fallSpeedMultiplier += 0.2f; // Speed up fall
+            fallSpeedMultiplier += 0.6f; // Speed up fall
         }
     }
 
