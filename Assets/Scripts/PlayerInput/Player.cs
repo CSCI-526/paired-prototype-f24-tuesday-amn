@@ -18,16 +18,27 @@ public class Player : MonoBehaviour
 
     public float baseGravity = 2f;
     public float maxFallSpeed = 18f;
-    public float fallSpeedMultiplier = 2f;
+    public float fallSpeedMultiplier = 4f;
+    private Vector2 lastVelocity;
 
     private float newSpeed;
     Vector2 movementInput;
     public Transform groundCheckPos;
     public Vector2 groundCheckSize = new Vector2(0.5f, 0.5f);
     public LayerMask ground;
+
+    // New variables for growing and shrinking
+    public float growScaleFactor = 1.25f; // Each step grows the ball by 25%
+    private int growStep = 0; // Track how many times the ball has grown (max 5)
+    private int maxGrowSteps = 3; // Maximum number of growth steps
+    public float fallSpeedFactor = 0.6f;
+    public float jumpHeightFactor = 2f;
+    private Vector3 originalScale; // Store original size for shrinking back
+
     // Start is called before the first frame update
     void Start()
     {
+        originalScale = transform.localScale; // Save the ball's original size
     }
 
     private void FixedUpdate()
@@ -84,11 +95,54 @@ public class Player : MonoBehaviour
         
     }
 
-    public void ApplyFriction() 
-    { 
+    public void ApplyFriction()
+    {
         if(isGrounded() && movementInput.x == 0 && movementInput.y == 0)
         {
             body.velocity *= groundDecay;
+        }
+    }
+    public void OnGrow(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed && growStep < maxGrowSteps)
+        {
+            GrowBall();
+        }
+    }
+
+    public void OnShrink(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed && growStep > 0)
+        {
+            ShrinkBall();
+        }
+    }
+
+    // Method to grow the ball
+    private void GrowBall()
+    {
+        if (growStep < maxGrowSteps)
+        {
+            transform.localScale *= growScaleFactor; // Increase the ball's size
+            growStep++; // Increment grow step count
+
+            // Adjust jump height and fall speed based on size
+            jumpHeight += jumpHeightFactor; // Increase jump height
+            fallSpeedMultiplier -= fallSpeedFactor; // Slow down fall
+        }
+    }
+
+    // Method to shrink the ball
+    private void ShrinkBall()
+    {
+        if (growStep > 0)
+        {
+            transform.localScale /= growScaleFactor; // Decrease the ball's size
+            growStep--; // Decrement grow step count
+            
+            // Adjust jump height and fall speed based on size
+            jumpHeight -= jumpHeightFactor; // Decrease jump height
+            fallSpeedMultiplier += fallSpeedFactor; // Speed up fall
         }
     }
 
