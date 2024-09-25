@@ -1852,6 +1852,63 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1001 &866106831
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 713054498236789541, guid: b0ca5317ccfa76e4490edb2117b5c3ec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.823884
+      objectReference: {fileID: 0}
+    - target: {fileID: 713054498236789541, guid: b0ca5317ccfa76e4490edb2117b5c3ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.100141525
+      objectReference: {fileID: 0}
+    - target: {fileID: 713054498236789541, guid: b0ca5317ccfa76e4490edb2117b5c3ec, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.090019114
+      objectReference: {fileID: 0}
+    - target: {fileID: 713054498236789541, guid: b0ca5317ccfa76e4490edb2117b5c3ec, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 713054498236789541, guid: b0ca5317ccfa76e4490edb2117b5c3ec, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 713054498236789541, guid: b0ca5317ccfa76e4490edb2117b5c3ec, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 713054498236789541, guid: b0ca5317ccfa76e4490edb2117b5c3ec, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 713054498236789541, guid: b0ca5317ccfa76e4490edb2117b5c3ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 713054498236789541, guid: b0ca5317ccfa76e4490edb2117b5c3ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 713054498236789541, guid: b0ca5317ccfa76e4490edb2117b5c3ec, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6597573581644553058, guid: b0ca5317ccfa76e4490edb2117b5c3ec, type: 3}
+      propertyPath: m_Name
+      value: Trampoline
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b0ca5317ccfa76e4490edb2117b5c3ec, type: 3}
 --- !u!1 &906706813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2179,7 +2236,7 @@ Transform:
   m_GameObject: {fileID: 1022319964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.36, y: 1.97, z: 0}
+  m_LocalPosition: {x: -16.53, y: 0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2329,7 +2386,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2108200202}
   groundDecay: 0.982
   baseGravity: 2
-  maxFallSpeed: 18
+  maxFallSpeed: 25
   fallSpeedMultiplier: 2
   groundCheckPos: {fileID: 1565461516}
   groundCheckSize: {x: 0.97, y: 0.1}
@@ -2337,6 +2394,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   growScaleFactor: 1.25
+  fallSpeedFactor: 0.6
+  jumpHeightFactor: 2
 --- !u!1 &1164073218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3267,8 +3326,8 @@ Transform:
   m_GameObject: {fileID: 1510181168}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 0, z: 0}
-  m_LocalScale: {x: 36, y: 0.5, z: 1}
+  m_LocalPosition: {x: -0.0405, y: 0, z: 0}
+  m_LocalScale: {x: 35.984203, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5034,3 +5093,4 @@ SceneRoots:
   - {fileID: 145213840}
   - {fileID: 560267139}
   - {fileID: 906706814}
+  - {fileID: 866106831}
