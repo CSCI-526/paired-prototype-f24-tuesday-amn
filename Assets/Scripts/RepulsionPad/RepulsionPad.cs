@@ -18,6 +18,6 @@ public class RepulsionPad : MonoBehaviour
 
         //float newDir = Mathf.Abs(collision.rigidbody.velocity.yf);
         Debug.Log(collision.relativeVelocity);
-        //collision.rigidbody.velocity =  new Vector2(0, newDir);
+        collision.rigidbody.velocity =  new Vector2(0, -collision.relativeVelocity.y);
     }
 }
