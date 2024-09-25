@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     private int maxGrowSteps = 3; // Maximum number of growth steps
     public float fallSpeedFactor = 0.6f;
     public float jumpHeightFactor = 2f;
+
     private Vector3 originalScale; // Store original size for shrinking back
 
     // Start is called before the first frame update
@@ -129,6 +130,10 @@ public class Player : MonoBehaviour
             // Adjust jump height and fall speed based on size
             jumpHeight += jumpHeightFactor; // Increase jump height
             fallSpeedMultiplier -= fallSpeedFactor; // Slow down fall
+
+            jumpHeight += 3f; // Increase jump height
+            fallSpeedMultiplier -= 0.6f; // Slow down fall
+
         }
     }
 
@@ -143,6 +148,10 @@ public class Player : MonoBehaviour
             // Adjust jump height and fall speed based on size
             jumpHeight -= jumpHeightFactor; // Decrease jump height
             fallSpeedMultiplier += fallSpeedFactor; // Speed up fall
+
+            jumpHeight -= 3f; // Decrease jump height
+            fallSpeedMultiplier += 0.6f; // Speed up fall
+
         }
     }
 
@@ -151,4 +160,6 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.white;
         Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
     }
+
+
 }
