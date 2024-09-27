@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
     // New variables for growing and shrinking
     public float growScaleFactor = 1.25f; // Each step grows the ball by 25%
-    private int growStep = 0; // Track how many times the ball has grown (max 5)
+    public int growStep = 0; // Track how many times the ball has grown (max 5)
     private int maxGrowSteps = 3; // Maximum number of growth steps
     public float fallSpeedFactor = 0.6f;
     public float jumpHeightFactor = 2f;

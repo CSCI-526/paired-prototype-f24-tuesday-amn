@@ -3,16 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RepulsionPad : MonoBehaviour
-{ 
-    [SerializeField]
-    private string playerTag;//set to Player in inspector
-    [SerializeField]
-    private Vector3 direction;
-    [SerializeField]
-    private float force;
-    [SerializeField]
-    private float maxVelocity = 20f;
-
+{
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
