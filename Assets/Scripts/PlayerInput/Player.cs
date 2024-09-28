@@ -161,5 +161,19 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Log the name of the collided object for debugging
+        Debug.Log("Collided with: " + other.gameObject.name);
+
+        // Check if the collided object has the correct tag
+        if (other.CompareTag("Diamond_Tag")) 
+        {
+            Destroy(other.gameObject); // Destroy the diamond object
+            Debug.Log("Diamond destroyed!");
+        }
+    }
+
+
 
 }
