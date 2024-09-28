@@ -34,6 +34,15 @@ public class Player : MonoBehaviour
     public float fallSpeedFactor = 0.6f;
     public float jumpHeightFactor = 2f;
 
+    public enum State
+    {
+        STATE_STANDING,
+        STATE_JUMPING,
+    };
+
+    public State _state;
+    public State _prevState;
+
     private Vector3 originalScale; // Store original size for shrinking back
 
     // Start is called before the first frame update
@@ -44,13 +53,13 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        _prevState = _state;
         ApplyFriction();
         Gravity();
     }
 
     private void Update()
     {
-
         body.velocity = new Vector2(movementInput.x * moveSpeed, body.velocity.y);
     }
 
@@ -70,8 +79,10 @@ public class Player : MonoBehaviour
     {
         if(Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, ground))
         {
+            _state = State.STATE_STANDING;
             return true;
         }
+        _state = State.STATE_JUMPING;
         return false;
     }
 
