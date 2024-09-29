@@ -2537,7 +2537,7 @@ MonoBehaviour:
   groundDecay: 0.982
   baseGravity: 2
   maxFallSpeed: 25
-  fallSpeedMultiplier: 2
+  fallSpeedMultiplier: 4
   groundCheckPos: {fileID: 1565461516}
   groundCheckSize: {x: 0.97, y: 0.1}
   ground:
@@ -2547,6 +2547,8 @@ MonoBehaviour:
   growStep: 0
   fallSpeedFactor: 0.6
   jumpHeightFactor: 2
+  _state: 0
+  _prevState: 0
 --- !u!1 &1164073218
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,9 +29,9 @@ public class Player : MonoBehaviour
 
     // New variables for growing and shrinking
     public float growScaleFactor = 1.25f; // Each step grows the ball by 25%
-    public int growStep = 0; // Track how many times the ball has grown (max 5)
+    public int growStep = 0; // Track how many times the ball has grown currently
     private int maxGrowSteps = 3; // Maximum number of growth steps
-    public float fallSpeedFactor = 0.6f;
+    public float fallSpeedFactor = 1.2f;
     public float jumpHeightFactor = 2f;
 
     public enum State
@@ -141,10 +141,6 @@ public class Player : MonoBehaviour
             // Adjust jump height and fall speed based on size
             jumpHeight += jumpHeightFactor; // Increase jump height
             fallSpeedMultiplier -= fallSpeedFactor; // Slow down fall
-
-            jumpHeight += 3f; // Increase jump height
-            fallSpeedMultiplier -= 0.6f; // Slow down fall
-
         }
     }
 
@@ -159,10 +155,6 @@ public class Player : MonoBehaviour
             // Adjust jump height and fall speed based on size
             jumpHeight -= jumpHeightFactor; // Decrease jump height
             fallSpeedMultiplier += fallSpeedFactor; // Speed up fall
-
-            jumpHeight -= 3f; // Decrease jump height
-            fallSpeedMultiplier += 0.6f; // Speed up fall
-
         }
     }
 
