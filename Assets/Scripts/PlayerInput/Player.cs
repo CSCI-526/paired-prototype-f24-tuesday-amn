@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     public int growStep = 0; // Track how many times the ball has grown currently
     private int maxGrowSteps = 3; // Maximum number of growth steps
     public float fallSpeedFactor = 1.2f;
-    public float jumpHeightFactor = 2f;
+    public float jumpHeightFactor = 3f;
 
     public enum State
     {
@@ -164,6 +164,8 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
     }
 
+    public GameObject endText;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Log the name of the collided object for debugging
@@ -174,6 +176,12 @@ public class Player : MonoBehaviour
         {
             Destroy(other.gameObject); // Destroy the diamond object
             Debug.Log("Diamond destroyed!");
+        }
+
+        if (other.CompareTag("End_Plate"))  // Check if the player collides with the platform
+        {
+            endText.SetActive(true); // Activate the text when the player reaches the platform
+            Debug.Log("You Win!");
         }
     }
 

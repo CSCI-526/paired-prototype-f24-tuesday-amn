@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Diamond_Tag
+  - End_Plate
   layers:
   - Default
   - TransparentFX
